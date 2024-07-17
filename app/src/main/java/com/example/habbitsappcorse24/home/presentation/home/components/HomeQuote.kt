@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.vector.VectorProperty
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
@@ -41,9 +42,10 @@ fun HomeQuote(
         Image(painter = painterResource(id = imageId),
             contentDescription = null,
         contentScale = ContentScale.Fit,
-        modifier = Modifier.align(Alignment.TopEnd).graphicsLayer {
-
-        }
+        modifier = Modifier.align(Alignment.TopEnd).graphicsLayer (
+            scaleX = 2.5f,
+            scaleY = 2.5f
+                ).offset(x = (-12).dp , y = 27.dp )
         )
         Column(modifier = Modifier.padding(vertical = 26.dp , horizontal = 16.dp).align(Alignment.TopStart)
             .padding(end= 100.dp)
